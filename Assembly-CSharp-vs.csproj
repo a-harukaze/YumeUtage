@@ -99,16 +99,6 @@
      <Compile Include="Assets\Script\SE.cs" />
      <Compile Include="Assets\Script\Top.cs" />
      <Compile Include="Assets\Script\UDS.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\ModifyXcodeProject.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBX\Lexer.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBX\Objects.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBX\Parser.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBX\Sections.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBX\Serializer.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBX\Utils.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PBXProject.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\PlistParser.cs" />
-     <Compile Include="Assets\Unity-Technologies-xcodeapi-be16958bfdc9\Properties\AssemblyInfo.cs" />
      <None Include="Assets\Plugins\Android\unityads\proguard-project.txt" />
      <None Include="Assets\Plugins\Android\unityads\build.xml" />
      <None Include="Assets\Plugins\Android\unityads\res\values\strings.xml" />
