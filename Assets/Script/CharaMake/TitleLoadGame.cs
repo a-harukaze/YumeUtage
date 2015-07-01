@@ -47,19 +47,17 @@ public class TitleLoadGame : MonoBehaviour {
 		Csute.hero_UP_type = PlayerPrefs.GetString ("s_hero_UP_type","");
 		Csute.n_teacher_ID = PlayerPrefs.GetInt ("s_n_teacher_ID", 0);
 		Csute.hero_sentouP = PlayerPrefs.GetInt ("s_hero_sentouP", 0);
-		
+		Csute.hero_lank = PlayerPrefs.GetInt ("s_hero_lank", 0);
+
 		// 師匠
-		for (int ttid =0; ttid <= 16; ttid ++) {
-			Csute.t_name [ttid] = PlayerPrefs.GetString ("s_t_name [ttid]");
-			Csute.t_Kin_U [ttid] = PlayerPrefs.GetInt ("s_t_Kin_U [ttid]", 0);
-			Csute.t_Mag_U [ttid] = PlayerPrefs.GetInt ("s_t_Mag_U [ttid]", 0);
-			Csute.t_Bin_U [ttid] = PlayerPrefs.GetInt ("s_t_Bin_U [ttid]", 0);
-			Csute.t_Men_U [ttid] = PlayerPrefs.GetInt ("s_t_Men_U [ttid]", 0);
-			Csute.t_Sei_U [ttid] = PlayerPrefs.GetInt ("s_t_Sei_U [ttid]", 0);
-		}
+		Csute.t_name  = PlayerPrefsX.GetStringArray ("s_t_name_full");
+		Csute.t_Kin_U  = PlayerPrefsX.GetIntArray ("s_t_Kin_U ");
+		Csute.t_Mag_U  = PlayerPrefsX.GetIntArray ("s_t_Mag_U ");
+		Csute.t_Bin_U  = PlayerPrefsX.GetIntArray ("s_t_Bin_U ");
+		Csute.t_Men_U  = PlayerPrefsX.GetIntArray ("s_t_Men_U ");
+		Csute.t_Sei_U  = PlayerPrefsX.GetIntArray ("s_t_Sei_U ");
 		
 		Csute.t_kazu = PlayerPrefs.GetInt ("s_t_kazu", 0);
-
 	}
 
 	public void Loadgo_time(){

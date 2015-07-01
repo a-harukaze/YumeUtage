@@ -16,6 +16,7 @@ public class NewGame : MonoBehaviour {
 	}
 	
 	public void Newgame(){
+		Csute.syukai=0;
 		this.gameObject.SetActive(false);
 	}
 	

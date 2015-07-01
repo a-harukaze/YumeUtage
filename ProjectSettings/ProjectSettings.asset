@@ -72,14 +72,14 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.A_harukaze.SDFU
-  bundleVersion: 1.00.6
+  bundleVersion: 1.00.7
   preloadedAssets: []
   metroEnableIndependentInputSource: 1
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: 5c596556decb141888be121e4494e18f
-  AndroidBundleVersionCode: 7
+  AndroidBundleVersionCode: 8
   AndroidMinSdkVersion: 15
   AndroidPreferredInstallLocation: 1
   aotOptions: 

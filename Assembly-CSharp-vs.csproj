@@ -95,6 +95,7 @@
      <Compile Include="Assets\Script\MainLoop\kou_Mainasubutton.cs" />
      <Compile Include="Assets\Script\MainLoop\kou_pupbutton.cs" />
      <Compile Include="Assets\Script\Play_Data.cs" />
+     <Compile Include="Assets\Script\PlayerPrefsX.cs" />
      <Compile Include="Assets\Script\SE.cs" />
      <Compile Include="Assets\Script\Top.cs" />
      <Compile Include="Assets\Script\UDS.cs" />

@@ -15,7 +15,7 @@ public class Play_Data : MonoBehaviour {
 	public static int s_tuki;
 	public static int s_syu;
 	public static int s_h_bp;
-	public static string s_t_name;
+	public static string[] s_t_name = new string[17];
 	public static int s_tid;
 
 	//主人公
@@ -42,12 +42,6 @@ public class Play_Data : MonoBehaviour {
 	public static int s_hero_lank;
 	
 	//師匠
-	public static string[] s_t_name_full = new string[17];
-	public static int[] s_t_Kin_U = new int[17];
-	public static int[] s_t_Mag_U = new int[17];
-	public static int[] s_t_Bin_U = new int[17];
-	public static int[] s_t_Men_U = new int[17];
-	public static int[] s_t_Sei_U = new int[17];
 	public static int s_t_kazu;
 
 	// Use this for initialization
@@ -69,12 +63,20 @@ public class Play_Data : MonoBehaviour {
 
 	public void SaveDataKaku(){
 
-		if (s_syukai != 0 ) {
+		if (Csute.savekaisuu != 0 ) {
+			s_nen = PlayerPrefs.GetInt ("s_nen", 0);
+			s_tuki = PlayerPrefs.GetInt ("s_tuki", 0);
+			s_syu = PlayerPrefs.GetInt ("s_syu", 0);
+			s_syukai = PlayerPrefs.GetInt ("s_syukai", 0);
+			s_savekaisuu = PlayerPrefs.GetInt ("s_savekaisuu", 0);
+			s_hero_sentouP = PlayerPrefs.GetInt ("s_hero_sentouP", 0);
+			s_n_teacher_ID = PlayerPrefs.GetInt ("s_n_teacher_ID", 0);
+			s_t_name = PlayerPrefsX.GetStringArray ("s_t_name_full");
 
-			savedata.text = "セーブ時の\n" +
+			savedata.text = "前セーブ\n" +
 				s_h_name + "\n" + s_syukai + "週目" + s_nen + "年目" + s_tuki + "月" + s_syu + "週\n" +
-				"戦闘力：" + s_h_bp + "\n" +
-				"師匠：" + s_t_name;
+					"戦闘力：" + s_hero_sentouP + "\n" +
+					"師匠：" + s_t_name[s_n_teacher_ID];
 		} else {
 			savedata.text = "まだセーブされていません。";
 		}
@@ -128,6 +130,8 @@ public class Play_Data : MonoBehaviour {
 		PlayerPrefs.SetInt ("s_n_teacher_ID",s_n_teacher_ID);
 		s_hero_sentouP = Csute.hero_sentouP;
 		PlayerPrefs.SetInt ("s_hero_sentouP",s_hero_sentouP);
+		s_hero_lank = Csute.hero_lank;
+		PlayerPrefs.SetInt ("s_hero_lank",s_hero_lank);
 		
 		//基本情報
 		s_nen = Csute.nen;
@@ -142,20 +146,12 @@ public class Play_Data : MonoBehaviour {
 		PlayerPrefs.SetInt ("s_savekaisuu",s_savekaisuu);
 
 		//師匠
-		for (int idid = 0 ; idid <= 16; idid++){
-			s_t_name_full[idid] = Csute.t_name[idid];
-			PlayerPrefs.SetString("s_t_name_full[idid]", s_t_name_full[idid]);
-			s_t_Kin_U[idid] = Csute.t_Kin_U[idid];
-			PlayerPrefs.SetInt ("s_t_Kin_U[idid]", s_t_Kin_U[idid]);
-			s_t_Mag_U[idid] = Csute.t_Mag_U[idid];
-			PlayerPrefs.SetInt ("s_t_Mag_U[idid]", s_t_Mag_U[idid]);
-			s_t_Bin_U[idid] = Csute.t_Bin_U[idid];
-			PlayerPrefs.SetInt ("s_t_Bin_U[idid]", s_t_Bin_U[idid]);
-			s_t_Men_U[idid] = Csute.t_Men_U[idid];
-			PlayerPrefs.SetInt ("s_t_Men_U[idid]", s_t_Men_U[idid]);
-			s_t_Sei_U[idid] = Csute.t_Sei_U[idid];
-			PlayerPrefs.SetInt ("s_t_Sei_U[idid]", s_t_Sei_U[idid]);
-		}
+			PlayerPrefsX.SetStringArray ("s_t_name_full", Csute.t_name);
+			PlayerPrefsX.SetIntArray ("s_t_Kin_U", Csute.t_Kin_U);
+			PlayerPrefsX.SetIntArray ("s_t_Mag_U", Csute.t_Mag_U);
+			PlayerPrefsX.SetIntArray ("s_t_Bin_U", Csute.t_Bin_U);
+			PlayerPrefsX.SetIntArray ("s_t_Men_U", Csute.t_Men_U);
+			PlayerPrefsX.SetIntArray ("s_t_Sei_U", Csute.t_Sei_U);
 		s_t_kazu = Csute.t_kazu;
 		PlayerPrefs.SetInt("s_t_kazu",s_t_kazu);
 
@@ -188,16 +184,16 @@ public class Play_Data : MonoBehaviour {
 			Csute.hero_UP_type = PlayerPrefs.GetString ("s_hero_UP_type","");
 			Csute.n_teacher_ID = PlayerPrefs.GetInt ("s_n_teacher_ID", 0);
 			Csute.hero_sentouP = PlayerPrefs.GetInt ("s_hero_sentouP", 0);
+			Csute.hero_lank = PlayerPrefs.GetInt ("s_hero_lank", 0);
 
 			// 師匠
-			for (int ttid =0; ttid <= 16; ttid ++) {
-				Csute.t_name [ttid] = PlayerPrefs.GetString ("s_t_name_full [ttid]");
-				Csute.t_Kin_U [ttid] = PlayerPrefs.GetInt ("s_t_Kin_U [ttid]", 0);
-				Csute.t_Mag_U [ttid] = PlayerPrefs.GetInt ("s_t_Mag_U [ttid]", 0);
-				Csute.t_Bin_U [ttid] = PlayerPrefs.GetInt ("s_t_Bin_U [ttid]", 0);
-				Csute.t_Men_U [ttid] = PlayerPrefs.GetInt ("s_t_Men_U [ttid]", 0);
-				Csute.t_Sei_U [ttid] = PlayerPrefs.GetInt ("s_t_Sei_U [ttid]", 0);
-			}
+			Csute.t_name  = PlayerPrefsX.GetStringArray ("s_t_name_full");
+			Csute.t_Kin_U  = PlayerPrefsX.GetIntArray ("s_t_Kin_U ");
+			Csute.t_Mag_U  = PlayerPrefsX.GetIntArray ("s_t_Mag_U ");
+			Csute.t_Bin_U  = PlayerPrefsX.GetIntArray ("s_t_Bin_U ");
+			Csute.t_Men_U  = PlayerPrefsX.GetIntArray ("s_t_Men_U ");
+			Csute.t_Sei_U  = PlayerPrefsX.GetIntArray ("s_t_Sei_U ");
+
 
 			Csute.t_kazu = PlayerPrefs.GetInt ("s_t_kazu", 0);
 
